@@ -79,12 +79,17 @@ st.info(t(
 # -------------------------------
 st.markdown("### 📷 Select Image Input Method")
 
+
 option = st.radio(
-    "Image Input",
-    ("Upload Image", "Use Camera"),
+    t("Image Input", language),
+    (
+        t("Upload Image", language),
+        t("Use Camera", language)
+    ),
     horizontal=True,
     label_visibility="collapsed"
 )
+
 
 uploaded = None
 
@@ -217,6 +222,3 @@ if st.session_state.uploaded_image is not None:
                 if msg["role"] == "assistant"
                 else msg["content"]
             )
-
-
-
